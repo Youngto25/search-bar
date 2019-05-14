@@ -3,75 +3,104 @@
   padding: 0;
   box-sizing: border-box;
 }
+*::before,*::after{
+  box-sizing: border-box;
+}
 
-.wrapper{
+ul,ol{
+  list-style: none;
+}
+
+body{
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+.wrapper{
+  display: flex;
+  position: relative;
+}
 .container{
-  display: flex;
-}
-
-.search{
-  position: relative; 
+  position: relative;
   display: inline-block;
-  display: flex;
+  float: left;
 }
 
-.search .span-wrapper{
+.span-wrapper{
   position: absolute;
+  height: 100%;
   right: 0;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 10px;
 }
 
-.search .span-wrapper .span{
-  border-left: 1px solid #b8b8b8;
-  height: 20px;
-}
-
-.container button{
-  background: #3988fb;
-  border: none;
-  font-size: 14px;
-  color: white;
-  padding: 0 20px;
-}
-
-.container button:focus{
-  outline: none;
-}
-
-.container button:hover{
-  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
-  background: #3781F0;
-}
-
-.search input{
+input{
+  height: 35px;
+  line-height: 35px;
+  width: 540px;
+  padding: 8px;
   border: 1px solid #b8b8b8;
-  height: 44px;
-  width: 585px;
-  line-height: 44px;
-  padding-left: 8px;
   font-size: 15px;
 }
-
-.search input:focus{
+input:focus{
   outline: none;
   border-color: #4b94fc;
 }
 
-.icon {
-       width: 20px;
-       height: 20px;
-       fill: #b8b8b8;
-    }
+button{
+  padding: 0 20px;
+  border: none;
+  background: #3988fb;
+  font-size: 16px;
+  color: white;
+  float: left;
+}
+button:hover{
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.2);
+  background: #3781f0;
+}
+button:focus{
+  outline: none;
+}
 
+.icon{
+   width: 20px; 
+   height: 20px;
+   vertical-align: -0.15em;
+   fill: #b8b8b8;
+   overflow: hidden;
+}
 .icon:hover{
   fill: #4b94fc;
   cursor: pointer;
+}
+.split-line{
+  height: 16px;
+  width: 0;
+  border-left: 1px solid #b8b8b8;
+  margin: 0 10px;
+}
+.choose{
+  position: absolute;
+  top: 100%;
+  display: none;
+  border: 1px solid #b8b8b8;
+}
+.choose li{
+  width: 538px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 8px;
+}
+.choose li:hover{
+  background: #ccc;
+  cursor: pointer;
+}
+.choose.active{
+  display: block;
 }
